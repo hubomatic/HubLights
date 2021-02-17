@@ -1,0 +1,122 @@
+name: CI
+
+on:
+  push:
+    branches: '*'
+    tags: '*'
+  schedule:
+    # run at 6AM & 6PM UTC
+    - cron:  '0 6,18 * * *'
+
+jobs:
+  Build:
+    env:
+      APP_NAME: MicroVector
+      TEST_NAME: MicroVector
+      ORG_NAME: hubomatic
+    runs-on: macos-latest
+    environment: Signing
+    timeout-minutes: 15 # small projects should be quick
+    steps:
+      - name: "Checkout Project"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # https://github.com/actions/checkout/issues/100
+          submodules: true
+
+      # cannot test until macos-11.0 is available in GitHub Actions
+      #- name: Framework Tests
+      #  run: xcodebuild test -scheme ${{ env.TEST_NAME }}
+      #- name: App Tests
+      #  run: xcodebuild test -scheme ${{ env.APP_NAME }}
+
+      # Ensure Info.plist has:
+      # <key>CFBundleShortVersionString</key>
+      # <string>$(MARKETING_VERSION)</string>
+      # <key>CFBundleVersion</key>
+      # <string>$(PRODUCT_VERSION)</string>
+
+      - name: Set steps.taginfo.outputs.tagname to current release
+        id: taginfo
+        run: echo ::set-output name=tagname::${GITHUB_REF#refs/*/}
+        
+      - name: Set steps.revinfo.outputs.buildnumber to current rev-list count
+        id: revinfo
+        run: echo "::set-output name=buildnumber::$(git rev-list --count ${{ steps.taginfo.outputs.tagname }})"
+
+      - name: "Import Certificate: Distribution"
+        uses: devbotsxyz/import-signing-certificate@main
+        with:
+          certificate-data: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+        # uses: apple-actions/import-codesign-certs@v1
+        # with: 
+        #   p12-file-base64: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
+        #   p12-password: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
+
+      - name: "Configure Export"
+        run: |
+          mkdir -p Export/
+          echo '<plist version="1.0"><dict><key>method</key><string>developer-id</string><key>teamID</key><string>${{ secrets.TEAM_ID }}</string></dict></plist>' > "Export/${{ env.APP_NAME }}ExportOptions.plist"
+          echo '<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"><channel><item><enclosure sparkle:version="${{ steps.revinfo.outputs.buildnumber }}" sparkle:shortVersionString="${{ steps.taginfo.outputs.tagname }}" url="https://github.com/${{ env.ORG_NAME }}/${{ env.APP_NAME }}/releases/download/${{ steps.taginfo.outputs.tagname }}/${{ env.APP_NAME }}.zip"></enclosure></item></channel></rss>' > Export/appcast.xml
+          cat Export/appcast.xml
+
+      - name: "Build Archive"
+        run:
+          xcodebuild archive -scheme "${{ env.APP_NAME }}" -archivePath "Export/${{ env.APP_NAME }}.xcarchive" COMPILER_INDEX_STORE_ENABLE="NO" MARKETING_VERSION="${{ steps.taginfo.outputs.tagname }}" PRODUCT_VERSION="${{ steps.revinfo.outputs.buildnumber }}"
+
+      - name: "Print Archive Size"
+        run:
+          du -skh "Export/${{ env.APP_NAME }}.xcarchive" 
+
+          
+      - name: "Export Archive"
+        run:
+          xcodebuild -exportArchive -archivePath "Export/${{ env.APP_NAME }}.xcarchive" -exportPath Export/ -exportOptionsPlist "Export/${{ env.APP_NAME }}ExportOptions.plist" 
+
+      - name: "Notarize App"
+        uses: hubomatic/hubomat@0.0.16
+        with:
+          verbose: false
+          timeout: 120 # minutes
+          product-path: "Export/${{ env.APP_NAME }}.app"
+          artifact-path: "Export/${{ env.APP_NAME }}.zip"
+          team-id: ${{ secrets.TEAM_ID }}
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+          certificate-data: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
+          appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
+          appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
+
+
+      - name: "Staple Release Build"
+        uses: devbotsxyz/xcode-staple@v1
+        with:
+          verbose: true
+          product-path: "Export/${{ env.APP_NAME }}.app"
+
+      - name: Package for Distribution
+        run: ditto -c -k --keepParent "Export/${{ env.APP_NAME }}.app" "Export/${{ env.APP_NAME }}.zip"
+
+      - name: Upload Build Artifact Zip
+        uses: actions/upload-artifact@v2
+        with:
+          name: Build
+          path: Export/${{ env.APP_NAME }}.zip
+
+          
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            CHANGELOG.md
+            Export/appcast.xml
+            Export/${{ env.APP_NAME }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
