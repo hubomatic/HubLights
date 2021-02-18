@@ -1,14 +1,14 @@
 //
-//  MicroVectorTests.swift
-//  MicroVectorTests
+//  HubLightsTests.swift
+//  HubLightsTests
 //
 //  Created by Marc Prud'hommeaux on 2/12/21.
 //
 
 import XCTest
-@testable import MicroVector
+@testable import HubLights
 
-class MicroVectorTests: XCTestCase {
+class HubLightsTests: XCTestCase {
 
     func testExample() throws {
     }

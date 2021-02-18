@@ -7,20 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490B596D25D99AA100E6F90D /* MemoZ in Frameworks */ = {isa = PBXBuildFile; productRef = 490B596C25D99AA100E6F90D /* MemoZ */; };
-		490B597A25D99B0A00E6F90D /* HubOMatic in Frameworks */ = {isa = PBXBuildFile; productRef = 490B597925D99B0A00E6F90D /* HubOMatic */; };
-		490B597B25D99B0A00E6F90D /* HubOMatic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 490B597925D99B0A00E6F90D /* HubOMatic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		49495B8C25DDAFEF0095F5AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49495B8B25DDAFEF0095F5AC /* API.swift */; };
+		49495B9025DDB0980095F5AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49495B8F25DDB0980095F5AC /* Model.swift */; };
 		495DE45E25D77C0B005CA904 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 495DE45D25D77C0A005CA904 /* README.md */; };
-		498872E425DC1F0E00430ABD /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 498872E325DC1F0E00430ABD /* Sparkle */; };
-		49C214EE25D6CB800030F8B2 /* MicroVectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C214ED25D6CB800030F8B2 /* MicroVectorApp.swift */; };
-		49C214F025D6CB800030F8B2 /* MicroVectorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C214EF25D6CB800030F8B2 /* MicroVectorDocument.swift */; };
-		49C214F225D6CB800030F8B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C214F125D6CB800030F8B2 /* ContentView.swift */; };
+		499BC56E25DE2940007F1877 /* MemoZ in Frameworks */ = {isa = PBXBuildFile; productRef = 499BC56D25DE2940007F1877 /* MemoZ */; };
+		49C214EE25D6CB800030F8B2 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C214ED25D6CB800030F8B2 /* App.swift */; };
 		49C214F425D6CB830030F8B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C214F325D6CB830030F8B2 /* Assets.xcassets */; };
-		49C214F725D6CB830030F8B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C214F625D6CB830030F8B2 /* Preview Assets.xcassets */; };
-		49C2150325D6CB830030F8B2 /* MicroVectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2150225D6CB830030F8B2 /* MicroVectorTests.swift */; };
-		49C2150E25D6CB830030F8B2 /* MicroVectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2150D25D6CB830030F8B2 /* MicroVectorUITests.swift */; };
-		49D2614C25D6F5550053615A /* NSImage+SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2614B25D6F5550053615A /* NSImage+SVG.swift */; };
-		49D2618425D70FB00053615A /* HubOMatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2618325D70FB00053615A /* HubOMatic.swift */; };
+		49C2150325D6CB830030F8B2 /* HubLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2150225D6CB830030F8B2 /* HubLightsTests.swift */; };
+		49C2150E25D6CB830030F8B2 /* HubLightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2150D25D6CB830030F8B2 /* HubLightsUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,14 +23,14 @@
 			containerPortal = 49C214E225D6CB800030F8B2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 49C214E925D6CB800030F8B2;
-			remoteInfo = MicroVector;
+			remoteInfo = HubLights;
 		};
 		49C2150A25D6CB830030F8B2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49C214E225D6CB800030F8B2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 49C214E925D6CB800030F8B2;
-			remoteInfo = MicroVector;
+			remoteInfo = HubLights;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -47,7 +41,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				490B597B25D99B0A00E6F90D /* HubOMatic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,23 +48,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49495B8B25DDAFEF0095F5AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		49495B8F25DDB0980095F5AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		495DE45D25D77C0A005CA904 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		49C214EA25D6CB800030F8B2 /* MicroVector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroVector.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C214ED25D6CB800030F8B2 /* MicroVectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroVectorApp.swift; sourceTree = "<group>"; };
-		49C214EF25D6CB800030F8B2 /* MicroVectorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroVectorDocument.swift; sourceTree = "<group>"; };
-		49C214F125D6CB800030F8B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		499BC51325DDC450007F1877 /* HubLights.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HubLights.entitlements; sourceTree = "<group>"; };
+		49C214EA25D6CB800030F8B2 /* HubLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HubLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C214ED25D6CB800030F8B2 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		49C214F325D6CB830030F8B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49C214F625D6CB830030F8B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49C214F825D6CB830030F8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49C214F925D6CB830030F8B2 /* MicroVector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MicroVector.entitlements; sourceTree = "<group>"; };
-		49C214FE25D6CB830030F8B2 /* MicroVectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicroVectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C2150225D6CB830030F8B2 /* MicroVectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroVectorTests.swift; sourceTree = "<group>"; };
+		49C214FE25D6CB830030F8B2 /* HubLightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HubLightsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C2150225D6CB830030F8B2 /* HubLightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubLightsTests.swift; sourceTree = "<group>"; };
 		49C2150425D6CB830030F8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49C2150925D6CB830030F8B2 /* MicroVectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicroVectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C2150D25D6CB830030F8B2 /* MicroVectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroVectorUITests.swift; sourceTree = "<group>"; };
+		49C2150925D6CB830030F8B2 /* HubLightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HubLightsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49C2150D25D6CB830030F8B2 /* HubLightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubLightsUITests.swift; sourceTree = "<group>"; };
 		49C2150F25D6CB830030F8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49D2614B25D6F5550053615A /* NSImage+SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+SVG.swift"; sourceTree = "<group>"; };
-		49D2618325D70FB00053615A /* HubOMatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubOMatic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				498872E425DC1F0E00430ABD /* Sparkle in Frameworks */,
-				490B596D25D99AA100E6F90D /* MemoZ in Frameworks */,
-				490B597A25D99B0A00E6F90D /* HubOMatic in Frameworks */,
+				499BC56E25DE2940007F1877 /* MemoZ in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,10 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				495DE45D25D77C0A005CA904 /* README.md */,
-				49D2618325D70FB00053615A /* HubOMatic.swift */,
-				49C214EC25D6CB800030F8B2 /* MicroVector */,
-				49C2150125D6CB830030F8B2 /* MicroVectorTests */,
-				49C2150C25D6CB830030F8B2 /* MicroVectorUITests */,
+				49C214EC25D6CB800030F8B2 /* HubLights */,
+				49C2150125D6CB830030F8B2 /* HubLightsTests */,
+				49C2150C25D6CB830030F8B2 /* HubLightsUITests */,
 				49C214EB25D6CB800030F8B2 /* Products */,
 				490B596B25D99AA100E6F90D /* Frameworks */,
 			);
@@ -125,60 +112,50 @@
 		49C214EB25D6CB800030F8B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49C214EA25D6CB800030F8B2 /* MicroVector.app */,
-				49C214FE25D6CB830030F8B2 /* MicroVectorTests.xctest */,
-				49C2150925D6CB830030F8B2 /* MicroVectorUITests.xctest */,
+				49C214EA25D6CB800030F8B2 /* HubLights.app */,
+				49C214FE25D6CB830030F8B2 /* HubLightsTests.xctest */,
+				49C2150925D6CB830030F8B2 /* HubLightsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49C214EC25D6CB800030F8B2 /* MicroVector */ = {
+		49C214EC25D6CB800030F8B2 /* HubLights */ = {
 			isa = PBXGroup;
 			children = (
-				49C214ED25D6CB800030F8B2 /* MicroVectorApp.swift */,
-				49C214EF25D6CB800030F8B2 /* MicroVectorDocument.swift */,
-				49C214F125D6CB800030F8B2 /* ContentView.swift */,
-				49D2614B25D6F5550053615A /* NSImage+SVG.swift */,
-				49C214F325D6CB830030F8B2 /* Assets.xcassets */,
+				499BC51325DDC450007F1877 /* HubLights.entitlements */,
+				49C214ED25D6CB800030F8B2 /* App.swift */,
+				49495B8B25DDAFEF0095F5AC /* API.swift */,
+				49495B8F25DDB0980095F5AC /* Model.swift */,
 				49C214F825D6CB830030F8B2 /* Info.plist */,
-				49C214F925D6CB830030F8B2 /* MicroVector.entitlements */,
-				49C214F525D6CB830030F8B2 /* Preview Content */,
+				49C214F325D6CB830030F8B2 /* Assets.xcassets */,
 			);
-			path = MicroVector;
+			path = HubLights;
 			sourceTree = "<group>";
 		};
-		49C214F525D6CB830030F8B2 /* Preview Content */ = {
+		49C2150125D6CB830030F8B2 /* HubLightsTests */ = {
 			isa = PBXGroup;
 			children = (
-				49C214F625D6CB830030F8B2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		49C2150125D6CB830030F8B2 /* MicroVectorTests */ = {
-			isa = PBXGroup;
-			children = (
-				49C2150225D6CB830030F8B2 /* MicroVectorTests.swift */,
+				49C2150225D6CB830030F8B2 /* HubLightsTests.swift */,
 				49C2150425D6CB830030F8B2 /* Info.plist */,
 			);
-			path = MicroVectorTests;
+			path = HubLightsTests;
 			sourceTree = "<group>";
 		};
-		49C2150C25D6CB830030F8B2 /* MicroVectorUITests */ = {
+		49C2150C25D6CB830030F8B2 /* HubLightsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				49C2150D25D6CB830030F8B2 /* MicroVectorUITests.swift */,
+				49C2150D25D6CB830030F8B2 /* HubLightsUITests.swift */,
 				49C2150F25D6CB830030F8B2 /* Info.plist */,
 			);
-			path = MicroVectorUITests;
+			path = HubLightsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49C214E925D6CB800030F8B2 /* MicroVector */ = {
+		49C214E925D6CB800030F8B2 /* HubLights */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49C2151225D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVector" */;
+			buildConfigurationList = 49C2151225D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLights" */;
 			buildPhases = (
 				49C214E625D6CB800030F8B2 /* Sources */,
 				49C214E725D6CB800030F8B2 /* Frameworks */,
@@ -189,19 +166,17 @@
 			);
 			dependencies = (
 			);
-			name = MicroVector;
+			name = HubLights;
 			packageProductDependencies = (
-				490B596C25D99AA100E6F90D /* MemoZ */,
-				490B597925D99B0A00E6F90D /* HubOMatic */,
-				498872E325DC1F0E00430ABD /* Sparkle */,
+				499BC56D25DE2940007F1877 /* MemoZ */,
 			);
-			productName = MicroVector;
-			productReference = 49C214EA25D6CB800030F8B2 /* MicroVector.app */;
+			productName = HubLights;
+			productReference = 49C214EA25D6CB800030F8B2 /* HubLights.app */;
 			productType = "com.apple.product-type.application";
 		};
-		49C214FD25D6CB830030F8B2 /* MicroVectorTests */ = {
+		49C214FD25D6CB830030F8B2 /* HubLightsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49C2151525D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVectorTests" */;
+			buildConfigurationList = 49C2151525D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLightsTests" */;
 			buildPhases = (
 				49C214FA25D6CB830030F8B2 /* Sources */,
 				49C214FB25D6CB830030F8B2 /* Frameworks */,
@@ -212,14 +187,14 @@
 			dependencies = (
 				49C2150025D6CB830030F8B2 /* PBXTargetDependency */,
 			);
-			name = MicroVectorTests;
-			productName = MicroVectorTests;
-			productReference = 49C214FE25D6CB830030F8B2 /* MicroVectorTests.xctest */;
+			name = HubLightsTests;
+			productName = HubLightsTests;
+			productReference = 49C214FE25D6CB830030F8B2 /* HubLightsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		49C2150825D6CB830030F8B2 /* MicroVectorUITests */ = {
+		49C2150825D6CB830030F8B2 /* HubLightsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49C2151825D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVectorUITests" */;
+			buildConfigurationList = 49C2151825D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLightsUITests" */;
 			buildPhases = (
 				49C2150525D6CB830030F8B2 /* Sources */,
 				49C2150625D6CB830030F8B2 /* Frameworks */,
@@ -230,9 +205,9 @@
 			dependencies = (
 				49C2150B25D6CB830030F8B2 /* PBXTargetDependency */,
 			);
-			name = MicroVectorUITests;
-			productName = MicroVectorUITests;
-			productReference = 49C2150925D6CB830030F8B2 /* MicroVectorUITests.xctest */;
+			name = HubLightsUITests;
+			productName = HubLightsUITests;
+			productReference = 49C2150925D6CB830030F8B2 /* HubLightsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -257,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 49C214E525D6CB800030F8B2 /* Build configuration list for PBXProject "MicroVector" */;
+			buildConfigurationList = 49C214E525D6CB800030F8B2 /* Build configuration list for PBXProject "HubLights" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -275,9 +250,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49C214E925D6CB800030F8B2 /* MicroVector */,
-				49C214FD25D6CB830030F8B2 /* MicroVectorTests */,
-				49C2150825D6CB830030F8B2 /* MicroVectorUITests */,
+				49C214E925D6CB800030F8B2 /* HubLights */,
+				49C214FD25D6CB830030F8B2 /* HubLightsTests */,
+				49C2150825D6CB830030F8B2 /* HubLightsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +263,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				495DE45E25D77C0B005CA904 /* README.md in Resources */,
-				49C214F725D6CB830030F8B2 /* Preview Assets.xcassets in Resources */,
 				49C214F425D6CB830030F8B2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,11 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C214F025D6CB800030F8B2 /* MicroVectorDocument.swift in Sources */,
-				49C214EE25D6CB800030F8B2 /* MicroVectorApp.swift in Sources */,
-				49C214F225D6CB800030F8B2 /* ContentView.swift in Sources */,
-				49D2614C25D6F5550053615A /* NSImage+SVG.swift in Sources */,
-				49D2618425D70FB00053615A /* HubOMatic.swift in Sources */,
+				49495B9025DDB0980095F5AC /* Model.swift in Sources */,
+				49495B8C25DDAFEF0095F5AC /* API.swift in Sources */,
+				49C214EE25D6CB800030F8B2 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C2150325D6CB830030F8B2 /* MicroVectorTests.swift in Sources */,
+				49C2150325D6CB830030F8B2 /* HubLightsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C2150E25D6CB830030F8B2 /* MicroVectorUITests.swift in Sources */,
+				49C2150E25D6CB830030F8B2 /* HubLightsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +315,12 @@
 /* Begin PBXTargetDependency section */
 		49C2150025D6CB830030F8B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49C214E925D6CB800030F8B2 /* MicroVector */;
+			target = 49C214E925D6CB800030F8B2 /* HubLights */;
 			targetProxy = 49C214FF25D6CB830030F8B2 /* PBXContainerItemProxy */;
 		};
 		49C2150B25D6CB830030F8B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49C214E925D6CB800030F8B2 /* MicroVector */;
+			target = 49C214E925D6CB800030F8B2 /* HubLights */;
 			targetProxy = 49C2150A25D6CB830030F8B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -474,21 +446,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MicroVector/MicroVector.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HubLights/HubLights.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MicroVector/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MicroVector/Info.plist;
+				INFOPLIST_FILE = HubLights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVector;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -500,21 +471,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MicroVector/MicroVector.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HubLights/HubLights.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MicroVector/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MicroVector/Info.plist;
+				INFOPLIST_FILE = HubLights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVector;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -528,17 +498,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MicroVectorTests/Info.plist;
+				INFOPLIST_FILE = HubLightsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVectorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLightsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicroVector.app/Contents/MacOS/MicroVector";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HubLights.app/Contents/MacOS/HubLights";
 			};
 			name = Debug;
 		};
@@ -549,17 +519,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MicroVectorTests/Info.plist;
+				INFOPLIST_FILE = HubLightsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVectorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLightsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicroVector.app/Contents/MacOS/MicroVector";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HubLights.app/Contents/MacOS/HubLights";
 			};
 			name = Release;
 		};
@@ -569,16 +539,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MicroVectorUITests/Info.plist;
+				INFOPLIST_FILE = HubLightsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVectorUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLightsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MicroVector;
+				TEST_TARGET_NAME = HubLights;
 			};
 			name = Debug;
 		};
@@ -588,23 +558,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = MicroVectorUITests/Info.plist;
+				INFOPLIST_FILE = HubLightsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.MicroVectorUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = net.hubomatic.HubLightsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = MicroVector;
+				TEST_TARGET_NAME = HubLights;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49C214E525D6CB800030F8B2 /* Build configuration list for PBXProject "MicroVector" */ = {
+		49C214E525D6CB800030F8B2 /* Build configuration list for PBXProject "HubLights" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C2151025D6CB830030F8B2 /* Debug */,
@@ -613,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49C2151225D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVector" */ = {
+		49C2151225D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLights" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C2151325D6CB830030F8B2 /* Debug */,
@@ -622,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49C2151525D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVectorTests" */ = {
+		49C2151525D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLightsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C2151625D6CB830030F8B2 /* Debug */,
@@ -631,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49C2151825D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "MicroVectorUITests" */ = {
+		49C2151825D6CB830030F8B2 /* Build configuration list for PBXNativeTarget "HubLightsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49C2151925D6CB830030F8B2 /* Debug */,
@@ -670,20 +640,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		490B596C25D99AA100E6F90D /* MemoZ */ = {
+		499BC56D25DE2940007F1877 /* MemoZ */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49D2615625D6F97D0053615A /* XCRemoteSwiftPackageReference "MemoZ" */;
 			productName = MemoZ;
-		};
-		490B597925D99B0A00E6F90D /* HubOMatic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49D2614525D6F4EE0053615A /* XCRemoteSwiftPackageReference "HubOMatic" */;
-			productName = HubOMatic;
-		};
-		498872E325DC1F0E00430ABD /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 498872E225DC1F0E00430ABD /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

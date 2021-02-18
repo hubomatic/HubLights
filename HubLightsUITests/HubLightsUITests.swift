@@ -1,13 +1,13 @@
 //
-//  MicroVectorUITests.swift
-//  MicroVectorUITests
+//  HubLightsUITests.swift
+//  HubLightsUITests
 //
 //  Created by Marc Prud'hommeaux on 2/12/21.
 //
 
 import XCTest
 
-class MicroVectorUITests: XCTestCase {
+class HubLightsUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

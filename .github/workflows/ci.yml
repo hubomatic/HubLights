@@ -11,8 +11,8 @@ on:
 jobs:
   Build:
     env:
-      APP_NAME: MicroVector
-      TEST_NAME: MicroVector
+      APP_NAME: HubLights
+      TEST_NAME: HubLights
       ORG_NAME: hubomatic
     runs-on: macos-latest
     environment: Signing

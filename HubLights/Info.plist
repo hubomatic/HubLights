@@ -17,7 +17,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>net.hubomatic.MicroVector.svg</string>
+				<string>net.hubomatic.HubLights.svg</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).example-document</string>
@@ -44,7 +44,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>SUFeedURL</key>
-	<string>https://github.com/hubomatic/MicroVector/releases/latest/download/appcast.xml</string>
+	<string>https://github.com/hubomatic/HubLights/releases/latest/download/appcast.xml</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -57,7 +57,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>net.hubomatic.MicroVector.svg</string>
+			<string>net.hubomatic.HubLights.svg</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
