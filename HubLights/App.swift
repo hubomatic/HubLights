@@ -24,7 +24,20 @@ struct HubLightsApp: App {
         }
         .commands {
             SidebarCommands()
+            ToolbarCommands()
+            CommandGroup(before: CommandGroupPlacement.toolbar) {
+                Button(loc("Refresh"), action: refreshSelection).keyboardShortcut("r", modifiers: [.command])
+                Button(loc("Refresh All"), action: refreshSelectionAll).keyboardShortcut("r", modifiers: [.command, .shift])
+            }
         }
+    }
+
+    func refreshSelection() {
+        log.debug(#function)
+    }
+
+    func refreshSelectionAll() {
+        log.debug(#function)
     }
 }
 
@@ -85,6 +98,14 @@ struct MainView : View {
         NavigationView {
             ConfigList(model: $model, selection: $selection)
                 .frame(minWidth: 150)
+                .toolbar {
+                    ToolbarItem(id: "refresh", placement: ToolbarItemPlacement.automatic, showsByDefault: true) {
+                        Button(action: refreshAll) {
+                            Label(loc("Refresh"), systemImage: "arrow.triangle.2.circlepath.circle.fill")
+                        }
+                    }
+                }
+
             ConfigEditorList(model: $model, selection: $selection)
                 .frame(minWidth: 300)
         }
@@ -95,6 +116,10 @@ struct MainView : View {
                 selection = .init([model.configs.first?.id].compactMap({ $0 }))
             }
         }
+    }
+
+    func refreshAll() {
+        log.debug(#function)
     }
 }
 
@@ -189,10 +214,7 @@ struct ConfigEditorList : View {
             ScrollView {
                 ForEach(model.configs) { config in
                     if selection.contains(config.id) {
-                        GroupBox(label: selectionTitleView(config: config)) {
-                            ConfigEditorView(config: $model[config: config.id])
-                                .padding()
-                        }
+                        ConfigEditorView(config: $model[config: config.id])
                         .lineLimit(1)
                         .padding()
                     }
@@ -201,10 +223,6 @@ struct ConfigEditorList : View {
 
             emptySelectionView()
         }
-    }
-
-    func selectionTitleView(config: Config) -> some View {
-        Label(config.listItemTitle, systemImage: config.enabledDefaulted == true ? "bolt.fill" : "bolt.slash.fill").font(.title)
     }
 
     func emptySelectionView() -> some View {
@@ -237,7 +255,26 @@ struct ConfigEditorView : View {
         return fmt
     }()
 
+
+    func selectionTitleView() -> some View {
+        HStack {
+            Label(config.listItemTitle, systemImage: config.enabledDefaulted == true ? "bolt.fill" : "bolt.slash.fill").font(.title)
+            Spacer()
+            Toggle(isOn: $config.enabledDefaulted) { EmptyView() }
+                .disabled(config.serviceURL == nil)
+                .toggleStyle(SwitchToggleStyle())
+                .help(loc("Toggles whether this action check is enabled"))
+        }
+    }
+
+
     var body: some View {
+        GroupBox(label: selectionTitleView()) {
+            formBody
+        }
+    }
+
+    var formBody: some View {
         Form {
             Group {
                 TextField(config.listItemTitle, text: $config.titleDefaulted)
@@ -252,8 +289,9 @@ struct ConfigEditorView : View {
                 TextField(loc("Branch (main, master)"), text: $config.branch[defaulting: ""])
                     .formLabel(FormLabelView("Branch:"))
 
-                Toggle(isOn: $config.enabledDefaulted) { FormLabelView("Enabled:") }
-                    .toggleStyle(SwitchToggleStyle())
+//                Toggle(isOn: $config.enabledDefaulted) { FormLabelView("Enabled:") }
+//                    .disabled(config.serviceURL == nil)
+//                    .toggleStyle(SwitchToggleStyle())
             }
 
             HStack {
@@ -292,9 +330,12 @@ struct ConfigEditorView : View {
                 HStack {
                     List {
                         switch status.results[config.id]?.checkAPIResponseZ {
-                        case .none: Text(loc("None"))
-                        case .success(let x): Text(loc("Sucess"))
-                        case .failure(let x): Text(loc("Failure"))
+                        case .none:
+                            EmptyView()
+                        case .failure(let x):
+                            Text("Failure: \(x as NSError)")
+                        case .success(let response):
+                            ForEach(response.check_suites, content: responseItemView)
                         }
                     }
 
@@ -309,6 +350,14 @@ struct ConfigEditorView : View {
                 Button(loc("Check Now"), action: checkStatus)
                     .disabled(config.serviceURL == nil)
             }
+        }
+    }
+
+    func responseItemView(_ response: CheckSuitesAPIResponse) -> some View {
+        HStack {
+            Text(response.conclusion?.rawValue ?? "")
+            Divider()
+            Text(response.status?.rawValue ?? "")
         }
     }
 
@@ -357,6 +406,7 @@ struct ConfigListItemView : View {
     var body: some View {
         Label {
             Text(config.listItemTitle)
+                .foregroundColor(config.enabledDefaulted ? nil : Color.secondary)
         } icon: {
             Image(systemName: "circle.fill")
                 .renderingMode(.template)

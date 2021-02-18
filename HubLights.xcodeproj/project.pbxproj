@@ -11,6 +11,7 @@
 		49495B9025DDB0980095F5AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49495B8F25DDB0980095F5AC /* Model.swift */; };
 		495DE45E25D77C0B005CA904 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 495DE45D25D77C0A005CA904 /* README.md */; };
 		499BC56E25DE2940007F1877 /* MemoZ in Frameworks */ = {isa = PBXBuildFile; productRef = 499BC56D25DE2940007F1877 /* MemoZ */; };
+		499BC57225DE2F28007F1877 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 499BC57125DE2F28007F1877 /* Sparkle */; };
 		49C214EE25D6CB800030F8B2 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C214ED25D6CB800030F8B2 /* App.swift */; };
 		49C214F425D6CB830030F8B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C214F325D6CB830030F8B2 /* Assets.xcassets */; };
 		49C2150325D6CB830030F8B2 /* HubLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C2150225D6CB830030F8B2 /* HubLightsTests.swift */; };
@@ -70,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				499BC56E25DE2940007F1877 /* MemoZ in Frameworks */,
+				499BC57225DE2F28007F1877 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,12 +124,12 @@
 		49C214EC25D6CB800030F8B2 /* HubLights */ = {
 			isa = PBXGroup;
 			children = (
-				499BC51325DDC450007F1877 /* HubLights.entitlements */,
 				49C214ED25D6CB800030F8B2 /* App.swift */,
 				49495B8B25DDAFEF0095F5AC /* API.swift */,
 				49495B8F25DDB0980095F5AC /* Model.swift */,
 				49C214F825D6CB830030F8B2 /* Info.plist */,
 				49C214F325D6CB830030F8B2 /* Assets.xcassets */,
+				499BC51325DDC450007F1877 /* HubLights.entitlements */,
 			);
 			path = HubLights;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 			name = HubLights;
 			packageProductDependencies = (
 				499BC56D25DE2940007F1877 /* MemoZ */,
+				499BC57125DE2F28007F1877 /* Sparkle */,
 			);
 			productName = HubLights;
 			productReference = 49C214EA25D6CB800030F8B2 /* HubLights.app */;
@@ -644,6 +647,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 49D2615625D6F97D0053615A /* XCRemoteSwiftPackageReference "MemoZ" */;
 			productName = MemoZ;
+		};
+		499BC57125DE2F28007F1877 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 498872E225DC1F0E00430ABD /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
